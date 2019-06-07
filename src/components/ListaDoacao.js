@@ -1,6 +1,7 @@
 import React from 'react';
 import Doacao from './Doacao';
 import axios from 'axios';
+import Servidor from '../constantes/Servidor';
 
 class ListaDoacao extends React.Component {
     state = {
@@ -8,7 +9,7 @@ class ListaDoacao extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`https://virtserver.swaggerhub.com/breno5/UaiCoins2/1.0.0/usuarios/1/transacoes`)
+        axios.get(`${Servidor.link}/transacoes`)
             .then(res => {
                 const doacoes = res.data;
                 this.setState({ doacoes });

@@ -216,5 +216,45 @@ a:hover, a:focus, a:active {
 }
 
 .doacao{
-  border-bottom: 1px solid #0000004a;
+  border: 1px solid #0000004a;
+  padding: 2rem;
+}
+
+
+.doacao-usuario::after {
+  content: ' tranferiu R$ ';
+  text-transform: none;
+  color: #000;
+  font-weight: 100;
+}
+
+.doacao-usuario, .doacao-valor {
+  text-transform: none;
+  color: #1d3b77e0;
+  
+}
+
+.doacao-destino::before{
+  content: 'Para ';
+  text-transform: none; 
+  color: #000;
+  font-weight: 100;
+}
+
+.doacao-destino {
+  content: 'Para o usuário ';
+  text-transform: none; 
+  color: #1d3b77e0;
+  font-weight: 700;
+}
+
+.doacao-motivo::before{
+  content: 'Motivo: ';
+  color: #1d3b77e0;
+  font-weight: 700;
+}
+
+.resume-date > span{
+  color: #1d3b77e0 !important;
+  font-weight: 500;
 }

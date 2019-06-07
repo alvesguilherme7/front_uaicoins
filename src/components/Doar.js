@@ -2,6 +2,7 @@ import React from 'react'
 import Select from 'react-select'
 import axios from 'axios'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
+import Servidor from '../constantes/Servidor'
 
 class Doar extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Doar extends React.Component {
 
   // retorna todos os usuários
   getUsuarios() {
-    axios.get(`https://virtserver.swaggerhub.com/breno5/UaiCoins2/1.0.0/usuarios`)
+    axios.get(`${Servidor.link}/usuarios`)
       .then(response => {
         const users = response.data;
         let options = [];
@@ -72,7 +73,7 @@ class Doar extends React.Component {
     }
 
     axios.post(
-      `https://virtserver.swaggerhub.com/breno5/UaiCoins2/1.0.0/transacoes`,
+      `${Servidor.link}/transacoes`,
       {
         idUsuarioOrigem: user,
         idUsuarioDestino: selectedOption.value,
@@ -102,6 +103,10 @@ class Doar extends React.Component {
           <ModalHeader toggle={this.toggle}>Realizar doação</ModalHeader>
           <ModalBody>
             <Form>
+            <FormGroup>
+                <Label>Você tem $ { this.props.valorDoacao } para doação</Label>
+              </FormGroup>
+              
               <FormGroup>
                 <Label for="valorDoado">Valor a ser doado:</Label>
                 <Input type="number" name="valorDoado" id="valorDoado" placeholder="$ 0.00" required />

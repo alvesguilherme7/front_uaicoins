@@ -1,0 +1,6 @@
+const ACAO_DEPOSITAR = "DEP";
+const ACAO_DOAR = "DOA";
+const ACAO_RETIRAR = "RET";
+const ACAO_SAIR = "SAI";
+
+export default { ACAO_DEPOSITAR, ACAO_DOAR, ACAO_RETIRAR, ACAO_SAIR };
